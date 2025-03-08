@@ -1,4 +1,4 @@
-# <Your Project Name>
+# Your Project Name
 
 Add some description here
 
