@@ -1,0 +1,27 @@
+name: Auto Add README
+
+on:
+  create:
+    branches:
+      - main  # Runs only when the `main` branch is created (i.e., in a new repo)
+
+jobs:
+  add-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the new repo
+        uses: actions/checkout@v4
+
+      - name: Create README.md
+        run: |
+          echo "# Welcome to \${{ github.repository }}" > README.md
+          echo "## Project Description TESTTEST" >> README.md
+          echo "This repository is maintained by [Your Organization](https://github.com/YOUR-ORG)." >> README.md
+
+      - name: Commit and Push README
+        run: |
+          git config --global user.name "GitHub Bot"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Add default README"
+          git push origin main
