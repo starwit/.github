@@ -14,9 +14,9 @@ jobs:
 
       - name: Create README.md
         run: |
-          echo "# Welcome to \${{ github.repository }}" > README.md
+          echo "# Welcome to " > README.md
           echo "## Project Description TESTTEST" >> README.md
-          echo "This repository is maintained by [Your Organization](https://github.com/starwit)." >> README.md
+          echo "This repository is maintained by " >> README.md
 
       - name: Commit and Push README
         run: |
